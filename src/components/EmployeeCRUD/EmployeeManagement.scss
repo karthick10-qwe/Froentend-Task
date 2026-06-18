@@ -1,0 +1,131 @@
+.employee-container {
+  padding: 32px !important;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  h5 {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* Mandatory text styling */
+.MuiTypography-colorError {
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: #dc2626 !important; /* Red-600 */
+  background: #fef2f2 !important; /* Red-50 */
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  border: 1px solid #fecaca !important; /* Red-200 */
+  display: inline-block;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+}
+
+/* Table container styling */
+.MuiTableContainer-root {
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0 !important; /* Slate-200 */
+  background: #ffffff !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  overflow-x: auto;
+  
+  /* Scrollbar override for table container */
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.MuiTable-root {
+  min-width: 650px;
+}
+
+.MuiTableCell-root {
+  font-family: 'Inter', sans-serif !important;
+  border-bottom: 1px solid #e2e8f0 !important; /* Slate-200 */
+  padding: 16px !important;
+}
+
+.MuiTableCell-head {
+  background: #f8fafc !important; /* Slate-50 */
+  color: #475569 !important; /* Slate-600 */
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.MuiTableCell-body {
+  color: #334155 !important; /* Slate-700 */
+  font-size: 0.9rem !important;
+}
+
+.MuiTableRow-root {
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: #f8fafc !important; /* Slate-50 */
+  }
+
+  &:last-child .MuiTableCell-root {
+    border-bottom: none !important;
+  }
+}
+
+/* Edit and Delete Actions in cells */
+.MuiTableCell-root {
+  .MuiButton-root {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+    min-width: 60px !important;
+    margin-right: 8px;
+    border-radius: 6px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+
+    /* Edit Button (primary action but secondary button) */
+    &:not(.MuiButton-colorError) {
+      border-color: #cbd5e1 !important; /* Slate-300 */
+      color: #334155 !important; /* Slate-700 */
+      background: #ffffff !important;
+
+      &:hover {
+        background: #f1f5f9 !important; /* Slate-100 */
+        border-color: #94a3b8 !important; /* Slate-400 */
+        color: #0f172a !important; /* Slate-900 */
+      }
+    }
+
+    /* Delete Button */
+    &.MuiButton-colorError {
+      border-color: #fecaca !important; /* Red-200 */
+      color: #dc2626 !important; /* Red-600 */
+      background: #ffffff !important;
+
+      &:hover {
+        background: #fef2f2 !important; /* Red-50 */
+        border-color: #fca5a5 !important; /* Red-300 */
+        color: #b91c1c !important; /* Red-700 */
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .employee-container {
+    padding: 20px 16px !important;
+  }
+}

@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+body,
+#root {
+  min-height: 100vh;
+  background-color: #f8fafc; /* Slate-50 */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #334155; /* Slate-700 */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navbar Space */
+.app-content {
+  min-height: calc(100vh - 70px);
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Common Page Layout */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.4s ease-out both;
+}
+
+/* Global MUI Styling Overrides */
+.MuiPaper-root {
+  background: #ffffff !important; /* Pure White */
+  border: 1px solid #e2e8f0 !important; /* Slate-200 */
+  border-radius: 12px !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 10px 15px -3px rgba(0, 0, 0, 0.02) !important; /* Soft, flat drop shadow */
+  color: #0f172a !important; /* Slate-900 */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+
+  &:hover {
+    border-color: #cbd5e1 !important; /* Slate-300 */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.04) !important;
+  }
+}
+
+/* Headings */
+.MuiTypography-h5 {
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  color: #0f172a !important; /* Slate-900 */
+  margin-bottom: 20px !important;
+}
+
+.MuiTypography-root {
+  font-family: 'Inter', sans-serif !important;
+  color: #475569; /* Slate-600 */
+}
+
+/* MUI Button Styles */
+.MuiButton-root {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+
+  &.MuiButton-contained {
+    background: #4f46e5 !important; /* Indigo-600 */
+    color: #ffffff !important;
+
+    &:hover {
+      background: #4338ca !important; /* Indigo-700 */
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    &:active {
+      background: #3730a3 !important; /* Indigo-800 */
+    }
+  }
+
+  &.MuiButton-outlined {
+    border: 1px solid #cbd5e1 !important; /* Slate-300 */
+    color: #334155 !important; /* Slate-700 */
+    background: transparent !important;
+
+    &:hover {
+      background: #f1f5f9 !important; /* Slate-100 */
+      border-color: #94a3b8 !important; /* Slate-400 */
+      color: #0f172a !important; /* Slate-900 */
+    }
+  }
+
+  &.MuiButton-containedWarning {
+    background: #d97706 !important; /* Amber-600 */
+    color: #ffffff !important;
+    
+    &:hover {
+      background: #b45309 !important; /* Amber-700 */
+    }
+  }
+
+  &.MuiButton-containedError {
+    background: #dc2626 !important; /* Red-600 */
+    color: #ffffff !important;
+
+    &:hover {
+      background: #b91c1c !important; /* Red-700 */
+    }
+  }
+}
+
+/* Material UI Form Input overrides */
+.MuiTextField-root {
+  .MuiInputLabel-root {
+    color: #64748b !important; /* Slate-500 */
+    font-family: 'Inter', sans-serif !important;
+
+    &.Mui-focused {
+      color: #4f46e5 !important; /* Indigo-600 */
+    }
+    &.Mui-error {
+      color: #ef4444 !important; /* Red-500 */
+    }
+  }
+
+  .MuiOutlinedInput-root {
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    color: #0f172a !important; /* Slate-900 */
+    font-family: 'Inter', sans-serif !important;
+    transition: all 0.15s ease !important;
+
+    .MuiOutlinedInput-notchedOutline {
+      border-color: #cbd5e1 !important; /* Slate-300 */
+      transition: border-color 0.15s ease !important;
+    }
+
+    &:hover .MuiOutlinedInput-notchedOutline {
+      border-color: #94a3b8 !important; /* Slate-400 */
+    }
+
+    &.Mui-focused {
+      background: #ffffff !important;
+      .MuiOutlinedInput-notchedOutline {
+        border-color: #4f46e5 !important; /* Indigo-600 */
+        border-width: 2px !important;
+      }
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15) !important;
+    }
+
+    &.Mui-error .MuiOutlinedInput-notchedOutline {
+      border-color: #ef4444 !important; /* Red-500 */
+    }
+  }
+
+  .MuiFormHelperText-root {
+    color: #64748b !important; /* Slate-500 */
+    font-family: 'Inter', sans-serif !important;
+    margin-top: 4px !important;
+
+    &.Mui-error {
+      color: #ef4444 !important;
+    }
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

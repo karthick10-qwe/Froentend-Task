@@ -1,0 +1,52 @@
+.counter-container {
+  padding: 32px !important;
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.counter-title {
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important; /* Slate-900 */
+  margin-bottom: 10px !important;
+  letter-spacing: -0.025em !important;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+  button {
+    flex: 1;
+    min-width: 110px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-container {
+    padding: 24px 16px !important;
+    margin: 15px auto;
+  }
+
+  .counter-title {
+    font-size: 1.5rem !important;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+    
+    button {
+      width: 100%;
+    }
+  }
+}
