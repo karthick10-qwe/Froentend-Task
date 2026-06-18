@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-import { Paper, Typography, TextField, Button } from "@mui/material";
+import {
+  Paper,
+  Typography,
+  TextField,
+  Button,
+} from "@mui/material";
 import "./NumberArray.scss";
 
 const NumberArray = () => {
   const [number, setNumber] = useState("");
   const [numbers, setNumbers] = useState([]);
-  const [originalNumbers, setOriginalNumbers] = useState([]);
+  const [originalNumbers, setOriginalNumbers] =
+    useState([]);
   const [error, setError] = useState("");
 
   const addNumber = () => {
@@ -32,15 +38,19 @@ const NumberArray = () => {
   };
 
   const sortAscending = () => {
-    setNumbers([...numbers].sort((a, b) => a - b));
+    setNumbers(
+      [...numbers].sort((a, b) => a - b)
+    );
   };
 
   const sortDescending = () => {
-    setNumbers([...numbers].sort((a, b) => b - a));
+    setNumbers(
+      [...numbers].sort((a, b) => b - a)
+    );
   };
 
   const reverseArray = () => {
-    setNumbers([...originalNumbers]);
+    setNumbers([...numbers].reverse());
   };
 
   const showOriginal = () => {
@@ -111,16 +121,20 @@ const NumberArray = () => {
 
       <div className="result-section">
         <Typography>
-          Maximum :
-          {numbers.length
-            ? Math.max(...numbers)
+          Maximum :{" "}
+          {originalNumbers.length
+            ? Math.max(
+                ...originalNumbers
+              )
             : "-"}
         </Typography>
 
         <Typography>
-          Minimum :
-          {numbers.length
-            ? Math.min(...numbers)
+          Minimum :{" "}
+          {originalNumbers.length
+            ? Math.min(
+                ...originalNumbers
+              )
             : "-"}
         </Typography>
       </div>

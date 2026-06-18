@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { Paper,Typography,TextField,Button } from "@mui/material";
+import {
+  Paper,
+  Typography,
+  TextField,
+  Button,
+} from "@mui/material";
 import "./StringArray.scss";
 
 const StringArray = () => {
@@ -42,15 +47,17 @@ const StringArray = () => {
     setStrings([...strings].sort().reverse());
   };
 
- const reverseArray = () => {
-  setStrings([...originalStrings]);
-};
+  const reverseArray = () => {
+    setStrings([...strings].reverse());
+  };
 
   const showOriginal = () => {
     setStrings([...originalStrings]);
   };
 
-  const sortedArray = [...strings].sort();
+  const sortedArray = [
+    ...originalStrings,
+  ].sort();
 
   return (
     <Paper className="string-array-container">
