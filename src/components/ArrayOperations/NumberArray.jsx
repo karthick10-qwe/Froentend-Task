@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  Paper,
-  Typography,
-  TextField,
-  Button,
-} from "@mui/material";
+import { Paper,Typography,TextField,Button } from "@mui/material";
 import "./NumberArray.scss";
 
 const NumberArray = () => {
